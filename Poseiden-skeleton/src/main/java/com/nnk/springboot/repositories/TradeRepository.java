@@ -5,4 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface TradeRepository extends JpaRepository<Trade, Integer> {
+	
+	Trade findTradeById(Integer id);
+	
+	Trade findIdByAccountAndTypeAndBuyQuantity(String account, String type, Double buyQuantity );
 }

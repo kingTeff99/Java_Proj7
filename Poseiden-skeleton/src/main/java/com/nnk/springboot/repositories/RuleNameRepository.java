@@ -5,4 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface RuleNameRepository extends JpaRepository<RuleName, Integer> {
+	
+	RuleName findRuleNameById(Integer id);
+	
+	RuleName findIdByNameAndDescription(String name, String description);
+	
 }
+

@@ -17,6 +17,15 @@ import java.sql.Timestamp;
 @Table(name = "bidlist")
 public class BidList {
 	
+	public BidList(String account, String type, Double bidQuantity) {
+		
+		this.account = account;
+		this.type = type;
+		this.bidQuantity = bidQuantity;
+	}
+	
+	@Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
 	private Integer bidListId ;
 	
 	private String account ;
