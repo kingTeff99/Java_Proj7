@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 
 @Data@AllArgsConstructor@NoArgsConstructor
 @Entity
-@Table(name = "rating")
+@Table(name = "Rating")
 public class Rating {
 	
 	public Rating(String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {

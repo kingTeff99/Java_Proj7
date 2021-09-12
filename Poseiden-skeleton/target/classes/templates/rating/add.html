@@ -18,6 +18,43 @@
 			<!--
 			TODO: Create a form to input the values of Rating, there are 2 buttons: Save data and Cancel to the list Rating
 			 -->
+			 <div th:if="${param.negative_number}">
+				<p class="text-danger" >Number cannot be negative</p>
+			</div>
+			<div class="row mb-3">
+			 	<div class="mb-3">
+			 		<label for="moodysRating" class="form-label">Moody's Rating</label>
+  					<input name="moodysRating" type="text" class="form-control" id="moodysRating" required placeholder="Moodys Rating">
+			 	</div>
+			 </div>
+			 <div class="row mb-3">
+			 	<div class="mb-3">
+			 		<label for="sandPRating" class="form-label">Sand P Rating</label>
+  					<input name="sandPRating" type="text" class="form-control" id="sandPRating" required placeholder="Sand P Rating">
+			 	</div>
+			 </div>
+			 <div th:if="${param.negative_number}">
+				<p class="text-danger"> Order Number cannot be negative</p>
+			</div>
+			 <div class="row mb-3">
+			 	<div class="mb-3">
+			 		<label for="fitchRating" class="form-label">Fitch Rating</label>
+  					<input name="fitchRating" type="text" class="form-control" id="fitchRating" required placeholder="Fitch Rating">
+			 	</div>
+			 </div>
+			 <div class="row mb-3">
+			 	<div class="mb-3">
+			 		<label for="orderNumber" class="form-label">Order Number</label>
+  					<input name="orderNumber" type="number" class="form-control" id="orderNumber" required placeholder="Order Number">
+			 	</div>
+			 </div>
+			 
+			 <div class="form-group">
+			 	<div class="col-sm-12">
+			 		<a class="btn btn-danger btn-sm"  href="/rating/list" role="button">Cancel</a>
+			 		<button class="btn btn-primary btn-sm" type="submit" value="AddRating">Add Rating</button>
+			 	</div>
+			 </div>
 
 		</form>
 	</div>

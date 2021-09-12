@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 
 @Data@AllArgsConstructor@NoArgsConstructor
 @Entity
-@Table(name = "trade")
+@Table(name = "Trade")
 public class Trade {
 	
 	public Trade(String account, String type) {
@@ -27,7 +27,7 @@ public class Trade {
 
 	@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Integer tradeId ;
+	private Integer id ;
 	
 	private String account ;
 	

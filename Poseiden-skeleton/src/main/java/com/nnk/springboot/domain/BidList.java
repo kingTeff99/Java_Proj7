@@ -14,7 +14,7 @@ import java.sql.Timestamp;
 
 @Data@AllArgsConstructor@NoArgsConstructor
 @Entity
-@Table(name = "bidlist")
+@Table(name = "BidList")
 public class BidList {
 	
 	public BidList(String account, String type, Double bidQuantity) {
@@ -26,7 +26,7 @@ public class BidList {
 	
 	@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Integer bidListId ;
+	private Integer id ;
 	
 	private String account ;
 	

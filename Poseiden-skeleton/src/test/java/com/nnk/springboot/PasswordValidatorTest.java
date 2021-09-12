@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import com.nnk.springboot.config.PasswordValidator;
+import com.nnk.springboot.security.PasswordValidator;
 
 public class PasswordValidatorTest {
 	

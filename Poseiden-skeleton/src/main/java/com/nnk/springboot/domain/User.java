@@ -1,13 +1,22 @@
 package com.nnk.springboot.domain;
 
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
-@Table(name = "users")
+@Table(name = "Users")
 public class User {
 	
     @Id
@@ -25,6 +34,5 @@ public class User {
     
     @NotBlank(message = "Role is mandatory")
     private String role;
-
     
 }

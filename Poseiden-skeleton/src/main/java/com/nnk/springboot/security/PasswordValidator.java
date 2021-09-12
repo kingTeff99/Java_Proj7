@@ -1,4 +1,4 @@
-package com.nnk.springboot.config;
+package com.nnk.springboot.security;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

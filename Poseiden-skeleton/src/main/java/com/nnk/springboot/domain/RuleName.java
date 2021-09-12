@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 
 @Data@AllArgsConstructor@NoArgsConstructor
 @Entity
-@Table(name = "rulename")
+@Table(name = "RuleName")
 public class RuleName {
 	
 	public RuleName(String name, String description, String json, String template, String sqlStr, String sqlPart) {

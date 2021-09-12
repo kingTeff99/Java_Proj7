@@ -2,6 +2,9 @@ package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.UserRepository;
+
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -12,9 +15,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 
-@Controller
+@Controller @Slf4j
 public class UserController {
 	
     @Autowired
@@ -26,16 +30,19 @@ public class UserController {
         model.addAttribute("users", userRepository.findAll());
         return "user/list";
     }
-
+    
+    @RolesAllowed("ADMIN")
     @GetMapping("/user/add")
     public String addUser(User bid)
     {
-    	
+    	log.info("Added User : show user/add" );
         return "user/add";
     }
 
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult result, Model model) {
+    	
+    	log.info("Validate: " + user);
     	
         if (!result.hasErrors()) {
         	
@@ -55,6 +62,8 @@ public class UserController {
     @GetMapping("/user/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
     	
+    	log.info("showUpdateForm User-Id :" + id);
+    	
         User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         
         user.setPassword("");
@@ -67,6 +76,8 @@ public class UserController {
     @PostMapping("/user/update/{id}")
     public String updateUser(@PathVariable("id") Integer id, @Valid User user,
                              BindingResult result, Model model) {
+    	
+    	log.info("Updated User :" + id);
     	
         if (result.hasErrors()) {
         	
@@ -89,6 +100,8 @@ public class UserController {
 
     @GetMapping("/user/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id, Model model) {
+    	
+    	log.info("Deleted User :" + id);
     	
         User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         

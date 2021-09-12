@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 
 @Data@AllArgsConstructor@NoArgsConstructor
 @Entity
-@Table(name = "curvepoint")
+@Table(name = "CurvePoint")
 public class CurvePoint {
 	
 	public CurvePoint(Integer curveId, double term, double value) {

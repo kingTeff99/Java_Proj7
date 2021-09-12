@@ -33,11 +33,22 @@
 					<th>CurvePointId</th>
 					<th>Term</th>
 					<th>Value</th>
+					<th>Creation date</th>
 					<th>Action</th>
 				</tr>
 			</thead>
-			<tbody>
-			<!-- TODO: Show all CurvePoint to the table, the action column will have Edit & Delete buttons -->
+			<tbody>			
+			<tr class="text-center" th:each="curvePoint : ${curvePoints}">
+                    <td th:text="${curvePoint.getId()}"></td>
+                    <td th:text="${curvePoint.getCurvePointId()}"></td>
+                    <td th:text="${curvePoint.getTerm()}"></td>
+                    <td th:text="${curvePoint.getValue()}"></td>
+                    <td th:text="${curvePoint.getCreationDate()}"></td>
+                    <td>
+                        <a th:href="@{/curvePoint/update/{id}(id=${curvePoint.getId()})}">Edit</a>&nbsp;|&nbsp;
+                        <a th:href="@{/curvePoint/delete/{id}(id=${curvePoint.getId()})}">Delete</a>
+                    </td>
+                </tr>
 			</tbody>
 		</table>
 	</div>
