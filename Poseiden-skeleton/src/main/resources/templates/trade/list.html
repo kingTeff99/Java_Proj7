@@ -43,8 +43,8 @@
                     <td th:text="${trade.getType()}"></td>
                     <td th:text="${trade.getBuyQuantity()}"></td>
                     <td class="text-center">
-                        <a th:href="@{/trade/update/{id}(id=${ruleName.getId()})}">Edit</a>&nbsp;|&nbsp;
-                        <a th:href="@{/trade/delete/{id}(id=${ruleName.getId()})}">Delete</a>
+                        <a th:href="@{/trade/update/{id}(id=${trade.getId()})}">Edit</a>&nbsp;|&nbsp;
+                        <a th:href="@{/trade/delete/{id}(id=${trade.getId()})}">Delete</a>
                     </td>
                 </tr>
 			</tbody>

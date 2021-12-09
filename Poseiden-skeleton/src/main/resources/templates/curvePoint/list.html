@@ -30,7 +30,7 @@
 			<thead>
 				<tr>
 					<th>Id</th>
-					<th>CurvePointId</th>
+					<th>CurveId</th>
 					<th>Term</th>
 					<th>Value</th>
 					<th>Creation date</th>
@@ -40,7 +40,7 @@
 			<tbody>			
 			<tr class="text-center" th:each="curvePoint : ${curvePoints}">
                     <td th:text="${curvePoint.getId()}"></td>
-                    <td th:text="${curvePoint.getCurvePointId()}"></td>
+                    <td th:text="${curvePoint.getCurveId()}"></td>
                     <td th:text="${curvePoint.getTerm()}"></td>
                     <td th:text="${curvePoint.getValue()}"></td>
                     <td th:text="${curvePoint.getCreationDate()}"></td>

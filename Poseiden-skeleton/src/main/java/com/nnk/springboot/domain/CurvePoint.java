@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 import java.sql.Timestamp;
 
 @Data@AllArgsConstructor@NoArgsConstructor
@@ -26,12 +28,14 @@ public class CurvePoint {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer id ;
 	
+	@NotNull(message = "must not be null")
 	private Integer curveId ;
 	
 	private Timestamp asOfDate ;
 	
 	private Double term ;
 	
+	@Positive(message = "must not be negative")
 	private Double value ;
 	
 	private Timestamp creationDate ;

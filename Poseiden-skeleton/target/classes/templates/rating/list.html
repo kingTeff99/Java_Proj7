@@ -33,7 +33,7 @@
 					<th>MoodysRating</th>
 					<th>SandPRating</th>
 					<th>FitchRating</th>
-					<th>Order</th>
+					<th>Order Number</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -43,7 +43,7 @@
                     <td th:text="${rating.getMoodysRating()}"></td>
                     <td th:text="${rating.getSandPRating()}"></td>
                     <td th:text="${rating.getFitchRating()}"></td>
-                    <td th:text="${rating.getOrder()}"></td>
+                    <td th:text="${rating.getOrderNumber()}"></td>
                     <td class="text-center">
                         <a th:href="@{/rating/update/{id}(id=${rating.getId()})}">Edit</a>&nbsp;|&nbsp;
                         <a th:href="@{/rating/delete/{id}(id=${rating.getId()})}">Delete</a>

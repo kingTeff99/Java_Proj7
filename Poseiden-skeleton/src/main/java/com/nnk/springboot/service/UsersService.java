@@ -1,5 +1,7 @@
 package com.nnk.springboot.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -24,11 +26,10 @@ public class UsersService implements UserDetailsService {
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
 
-		User user = userRepo.findUserByUsername(username);
+		Optional<User> user = userRepo.findUserByUsername(username);
 		
-		if(user.equals(null)) {
+		if(!user.isPresent()) {
 			
 			log.error("User not found in the DB");
 			
@@ -39,9 +40,9 @@ public class UsersService implements UserDetailsService {
 			log.info("User found in the DB : {}", username);
 		}
 		
-		return org.springframework.security.core.userdetails.User.withUsername(user.getUsername())
-                .password(user.getPassword())
-                .authorities(user.getRole())
+		return org.springframework.security.core.userdetails.User.withUsername(user.get().getUsername())
+                .password(user.get().getPassword())
+                .authorities(user.get().getRole())
                 .build();
 	}
 	

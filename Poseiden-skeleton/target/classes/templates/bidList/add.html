@@ -36,6 +36,9 @@
 			 </div>
 			 </div>
 			 
+			 <div th:if="${param.error_number_negative}">
+                <p class="text-danger" >Bid Quantity cannot be negative</p>
+            </div>
 			 <div class="form-group"> 
 			 <div class="row mb-3">
 			 	<div class="mb-3">

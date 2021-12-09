@@ -12,27 +12,27 @@ import com.nnk.springboot.service.UsersService;
 @SpringBootApplication
 public class Application {
 	
-//	@Autowired
-//	private UsersService usersService;
+	@Autowired
+	private UsersService usersService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
 	
-//	@Bean
-//	CommandLineRunner run() {
-//		return args -> {
-//			
-//			User user1 = new User();
-//			
-//			user1.setId(null);
-//			user1.setUsername("jd");
-//			user1.setPassword("@Azerty123");
-//			user1.setFullname("JohnDoe");
-//			user1.setRole("ADMIN");
-//			
-//			usersService.saveUser(user1);
-//			
-//		};
-//	}
+	@Bean
+	CommandLineRunner run() {
+		return args -> {
+			
+			User user1 = new User();
+			
+			user1.setId(null);
+			user1.setUsername("jd");
+			user1.setPassword("@Azerty123");
+			user1.setFullname("JohnDoe");
+			user1.setRole("ADMIN");
+			
+			usersService.saveUser(user1);
+			
+		};
+	}
 }

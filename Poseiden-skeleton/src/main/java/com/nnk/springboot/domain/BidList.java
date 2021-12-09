@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
+
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -32,6 +34,7 @@ public class BidList {
 	
 	private String type ;
 	
+	@Positive(message = "must not be negative")
 	private Double bidQuantity ;
 	
 	private Double askQuantity ;
